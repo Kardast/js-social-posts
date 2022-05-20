@@ -1,7 +1,7 @@
 const myContainer = document.getElementById("container");
 console.log(myContainer);
 
-posts.forEach((element) => {
+posts.forEach((element, index) => {
 
     myContainer.innerHTML +=
     `
@@ -50,7 +50,7 @@ posts.forEach((element) => {
 
                     <div class="likes__counter">
                         
-                        Piace a <b id="like-counter-1" class="js-likes-counter">${element.likes}</b> persone
+                        Piace a <b id="like-counter-${index}" class="js-likes-counter">${element.likes}</b> persone
                     </div>
                 </div> 
             </div>            
@@ -61,13 +61,14 @@ posts.forEach((element) => {
 const iLikeIt = document.querySelectorAll(".js-like-button");
 console.log(iLikeIt);
 
-iLikeIt.forEach((item) => {
+iLikeIt.forEach((item, index2) => {
 
     item.addEventListener("click",
     function() {
 
         console.log(this);
         this.classList.add("like-button--liked")
+        // document.getElementById("like-counter-[index]")
         posts[0].likes++;
         console.log(posts[0]);
     })
