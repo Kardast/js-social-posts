@@ -57,3 +57,20 @@ posts.forEach((element) => {
         </div>
     `;
 });
+
+const iLikeIt = document.querySelectorAll(".js-like-button");
+console.log(iLikeIt);
+
+iLikeIt.forEach((item) => {
+
+    addEventListener("click",
+    function() {
+
+        let clicked = true;
+        if (clicked === true) {
+            item.classList.add("like-button--liked")
+            
+        }
+
+    })
+});
