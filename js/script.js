@@ -40,7 +40,7 @@ posts.forEach((element) => {
 
                     <div class="likes__cta">
 
-                        <a class="like-button  js-like-button" href="#" data-postid="1">
+                        <a class="like-button  js-like-button" href="javascript:void(0)" data-postid="1">
 
                             <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
 
@@ -63,14 +63,12 @@ console.log(iLikeIt);
 
 iLikeIt.forEach((item) => {
 
-    addEventListener("click",
+    item.addEventListener("click",
     function() {
 
-        let clicked = true;
-        if (clicked === true) {
-            item.classList.add("like-button--liked")
-            
-        }
-
+        console.log(this);
+        this.classList.add("like-button--liked")
+        posts[0].likes++;
+        console.log(posts[0]);
     })
 });

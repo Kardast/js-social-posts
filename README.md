@@ -35,6 +35,3 @@ Consigli del giorno:
 Ragioniamo come sempre a step. Prima scriviamo nei commenti la logica in italiano e poi traduciamo in codice. console.log() è nostro amico. Quando un pezzo di codice funziona, chiediamoci se possiamo scomporlo in funzioni più piccole.
 Buon lavoroe buon we!  :v::teschio:
 
-
-MioBonus 
-prendi le iniziali da "name" utilizzando .slice e poi dalle duen nuove parole utilizza .charAt(1) e mettile in "image"

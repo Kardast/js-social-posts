@@ -124,3 +124,11 @@ function palindroma(wordCheck) {
         return "La parola non è palindroma.";
     }
 }
+
+// funzione che assegna la classe del colore al click
+function likeButtonClick() {
+
+    console.log(this);
+    this.classList.add("like-button--liked")
+
+}
