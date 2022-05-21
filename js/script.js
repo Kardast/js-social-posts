@@ -55,21 +55,35 @@ posts.forEach((element, index) => {
                 </div> 
             </div>            
         </div>
+
     `;
 });
 
 const iLikeIt = document.querySelectorAll(".js-like-button");
 console.log(iLikeIt);
 
-iLikeIt.forEach((item, index2) => {
+iLikeIt.forEach((item, index) => 
 
     item.addEventListener("click",
     function() {
-
         console.log(this);
-        this.classList.add("like-button--liked")
-        // document.getElementById("like-counter-[index]")
-        posts[0].likes++;
-        console.log(posts[0]);
+        this.classList.add("like-button--liked");
+        posts[index].likes++;
+        console.log(posts[index].likes);
+        let myCounter = document.getElementById("like-counter-" + index);
+        myCounter.innerHTML = `<b id="like-counter-${index}" class="js-likes-counter">${posts[index].likes}</b>`;
+        let myArray = [];
+        myArray.push(posts[index].id); 
+        console.log(myArray);
     })
-});
+
+);
+
+
+
+
+
+
+
+
+
