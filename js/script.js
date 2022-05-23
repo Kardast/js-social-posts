@@ -62,22 +62,47 @@ posts.forEach((element, index) => {
 const iLikeIt = document.querySelectorAll(".js-like-button");
 console.log(iLikeIt);
 
-iLikeIt.forEach((item, index) => 
+// iLikeIt.forEach((item, index) => 
 
-    item.addEventListener("click",
-    function() {
-        console.log(this);
-        this.classList.add("like-button--liked");
-        posts[index].likes++;
-        console.log(posts[index].likes);
-        let myCounter = document.getElementById("like-counter-" + index);
-        myCounter.innerHTML = `<b id="like-counter-${index}" class="js-likes-counter">${posts[index].likes}</b>`;
-        let myArray = [];
-        myArray.push(posts[index].id); 
-        console.log(myArray);
-    })
+//     item.addEventListener("click",
+//     function() {
+//         console.log(this);
+//         this.classList.add("like-button--liked");
+//         posts[index].likes++;
+//         console.log(posts[index].likes);
+//         let myCounter = document.getElementById("like-counter-" + index);
+//         myCounter.innerHTML = `<b id="like-counter-${index}" class="js-likes-counter">${posts[index].likes}</b>`;
+//         let myArray = [];
+//         myArray.push(posts[index].id); 
+//         console.log(myArray);
+//     })
 
-);
+// );
+
+let myArray = [];
+
+iLikeIt.forEach((item, index) => {
+
+    item.addEventListener("click", 
+        function () {
+            item.classList.toggle("like-button--liked");
+            if (item.classList.contains("like-button--liked")) {
+                posts[index].likes++;
+                myArray.push(posts[index].id);
+
+            } else {
+                posts[index].likes--;
+                myArray.pop(posts[index].id);
+
+            }
+            console.log(posts[index].likes);
+            let myCounter = document.getElementById("like-counter-" + index);
+            myCounter.innerHTML = `<b id="like-counter-${index}" class="js-likes-counter">${posts[index].likes}</b>`;
+            console.log(myArray);
+        })
+
+});
+
 
 
 
